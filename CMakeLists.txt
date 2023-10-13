@@ -12,6 +12,7 @@ FetchContent_Declare(
   URL https://github.com/google/googletest/archive/refs/tags/v1.14.0.zip
 )
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+option(INSTALL_GTEST OFF) # This prevents Jenkins from needing root privelages.
 FetchContent_MakeAvailable(googletest)
 enable_testing()
 include(GoogleTest)
